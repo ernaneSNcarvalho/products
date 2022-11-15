@@ -10,3 +10,8 @@ export const createProduct = async (req: Request, res: Response) => {
     let newProduct = await Product.create({name, stock, price});
     res.json({newProduct})
 }
+
+export const getProducts = async (req: Request, res: Response) => {
+    let list = await Product.findAll();
+    res.json({list})
+}
